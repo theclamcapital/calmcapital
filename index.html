@@ -5,103 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Calm Capital | Institutional Wealth Preservation Strategy for India</title>
     <meta name="description" content="A comprehensive institutional guide to long-term wealth preservation for Indian investors. Mastering asset allocation, inflation hedging, and risk management." />
-    <meta name="keywords" content="financial literacy india, asset allocation india, long term investing, risk management, wealth preservation" />
-    <meta name="author" content="The Calm Capital Project" />
     <meta name="theme-color" content="#0a0a0a" />
     
-    <!-- Performance Optimization: Resource Hints -->
+    <!-- Resource Hints -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link rel="preconnect" href="https://esm.sh" crossorigin>
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-    <link rel="dns-prefetch" href="https://unpkg.com">
-    <link rel="dns-prefetch" href="https://esm.sh">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Babel -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-    <!-- Tailwind Config -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              serif: ['"Playfair Display"', 'serif'],
-              body: ['"Lora"', 'serif'],
-              sans: ['"Inter"', 'sans-serif']
-            },
-            colors: {
-              codex: {
-                black: '#0a0a0a',      
-                card: '#121212',       
-                border: '#2a2a2a',     
-                text: '#E5E5E5',       
-                dim: '#A1A1AA',        
-                gold: '#D4AF37',       
-                goldDim: '#8a7020',    
-                alert: '#7f1d1d'       
-              }
-            },
-            animation: {
-              'fade-in': 'fadeIn 0.5s ease-out',
-              'fade-in-up': 'fadeInUp 0.8s ease-out',
-            },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' },
-              },
-              fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(10px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              }
-            }
-          }
-        }
-      }
-    </script>
+    <!-- Critical CSS: Loads instantly. Independent of Tailwind. -->
     <style>
-      /* CRITICAL CSS: These styles load immediately, ensuring the page isn't white while waiting for Tailwind */
       :root {
-        --bg-color: #0a0a0a;
-        --card-color: #121212;
-        --border-color: #2a2a2a;
-        --text-color: #E5E5E5;
+        --bg: #0a0a0a;
+        --card: #121212;
+        --border: #2a2a2a;
+        --text: #E5E5E5;
+        --gold: #D4AF37;
       }
       body { 
-        background-color: var(--bg-color); 
-        color: var(--text-color); 
+        background-color: var(--bg); 
+        color: var(--text); 
         margin: 0;
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
       }
-      ::-webkit-scrollbar { width: 8px; }
-      ::-webkit-scrollbar-track { background: #0a0a0a; }
-      ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 4px; }
-      html { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-      p { margin-bottom: 1.5em; line-height: 1.8; white-space: pre-line; }
-      .text-justify { text-align: justify; }
       
-      /* Mobile Performance: Content Visibility 
-         This skips rendering work for off-screen content, saving massive CPU on mobile 
-      */
-      .chapter-section {
+      /* Mobile Optimization: Skip rendering off-screen content */
+      .chapter-section, .asset-grid-container {
         content-visibility: auto;
-        contain-intrinsic-size: 500px; /* Estimated height of a section */
+        contain-intrinsic-size: 1px 500px;
       }
 
-      /* Raw CSS Skeleton Loader (No Tailwind Dependency) */
-      .sk-container { display: flex; min-height: 100vh; background: var(--bg-color); }
-      .sk-sidebar { display: none; width: 320px; border-right: 1px solid var(--border-color); padding: 2rem; }
-      .sk-main { flex: 1; padding: 1.5rem; width: 100%; max-width: 900px; margin: 0 auto; }
-      .sk-block { background-color: var(--card-color); border-radius: 4px; margin-bottom: 1rem; }
-      .sk-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+      /* Skeleton Loader Styles */
+      .sk-container { display: flex; min-height: 100vh; background: var(--bg); }
+      .sk-sidebar { display: none; width: 320px; border-right: 1px solid var(--border); padding: 2rem; box-sizing: border-box; }
+      .sk-main { flex: 1; padding: 1.5rem; width: 100%; max-width: 900px; margin: 0 auto; box-sizing: border-box; }
+      .sk-block { background-color: var(--card); border-radius: 4px; margin-bottom: 1rem; }
+      .sk-pulse { animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
       
       @media (min-width: 1024px) {
         .sk-sidebar { display: flex; flex-direction: column; position: fixed; height: 100vh; top: 0; left: 0; }
@@ -125,34 +69,40 @@
 </head>
 <body>
     <!-- 
-      PERFORMANCE OPTIMIZATION: 
-      Critical CSS Skeleton. This markup uses raw inline styles and classes defined in <style>
-      so it renders INSTANTLY (0ms), avoiding the "White Screen of Death" while waiting for
-      Tailwind and Babel to load on mobile networks.
+      INITIAL SKELETON:
+      This is strictly HTML/CSS. It paints immediately (FCP) while the heavy JS loads in background.
     -->
     <div id="root">
       <div class="sk-container">
-        <!-- Sidebar Skeleton -->
         <nav class="sk-sidebar">
-           <div class="sk-block sk-pulse" style="height: 40px; width: 120px; margin-bottom: 2rem;"></div>
-           <div class="sk-block sk-pulse" style="height: 30px; width: 100%;"></div>
-           <div class="sk-block sk-pulse" style="height: 30px; width: 100%;"></div>
-           <div class="sk-block sk-pulse" style="height: 30px; width: 100%;"></div>
+           <div class="sk-block" style="height: 40px; width: 140px; margin-bottom: 3rem; background: transparent; border: 1px solid var(--border);"></div>
+           <div class="sk-block sk-pulse" style="height: 40px; width: 100%;"></div>
+           <div class="sk-block sk-pulse" style="height: 40px; width: 100%;"></div>
+           <div class="sk-block sk-pulse" style="height: 40px; width: 100%;"></div>
+           <div class="sk-block sk-pulse" style="height: 40px; width: 100%;"></div>
         </nav>
-        <!-- Main Content Skeleton -->
         <main class="sk-main">
-           <div class="sk-block sk-pulse" style="height: 16px; width: 100px; margin-bottom: 3rem;"></div>
-           <div class="sk-block sk-pulse" style="height: 60px; width: 80%; margin-bottom: 1.5rem;"></div>
-           <div class="sk-block sk-pulse" style="height: 30px; width: 60%; margin-bottom: 3rem;"></div>
+           <!-- Meta -->
+           <div class="sk-block" style="height: 20px; width: 100%; margin-bottom: 3rem; background: transparent; border-bottom: 1px solid var(--border);"></div>
+           <!-- Title -->
+           <div class="sk-block sk-pulse" style="height: 60px; width: 90%; margin-bottom: 1rem;"></div>
+           <div class="sk-block sk-pulse" style="height: 30px; width: 60%; margin-bottom: 4rem;"></div>
+           <!-- Diagram Area -->
+           <div class="sk-block sk-pulse" style="height: 300px; width: 100%; margin-bottom: 4rem; border: 1px solid var(--border); background: transparent;"></div>
+           <!-- Text -->
            <div class="sk-block sk-pulse" style="height: 16px; width: 100%;"></div>
-           <div class="sk-block sk-pulse" style="height: 16px; width: 100%;"></div>
-           <div class="sk-block sk-pulse" style="height: 16px; width: 100%;"></div>
-           <div class="sk-block sk-pulse" style="height: 16px; width: 90%;"></div>
+           <div class="sk-block sk-pulse" style="height: 16px; width: 95%;"></div>
+           <div class="sk-block sk-pulse" style="height: 16px; width: 98%;"></div>
         </main>
       </div>
     </div>
 
-    <!-- DATA INJECTION -->
+    <!-- 
+      DEFERRED LOADING STRATEGY
+      Scripts are placed at the end of body with 'defer' to unblock the main thread HTML parser.
+    -->
+
+    <!-- 1. Content Data -->
     <script>
       window.CALM_CAPITAL_CONTENT = [
   {
@@ -585,10 +535,56 @@
   }
 ];
     </script>
+
+    <!-- 2. Libraries (Tailwind config first, then library, then Babel) -->
+    <script>
+      // Configure Tailwind before loading script
+      window.tailwind = {
+        config: {
+          theme: {
+            extend: {
+              fontFamily: {
+                serif: ['"Playfair Display"', 'serif'],
+                body: ['"Lora"', 'serif'],
+                sans: ['"Inter"', 'sans-serif']
+              },
+              colors: {
+                codex: {
+                  black: '#0a0a0a',      
+                  card: '#121212',       
+                  border: '#2a2a2a',     
+                  text: '#E5E5E5',       
+                  dim: '#A1A1AA',        
+                  gold: '#D4AF37',       
+                  goldDim: '#8a7020',    
+                  alert: '#7f1d1d'       
+                }
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-out',
+                'fade-in-up': 'fadeInUp 0.8s ease-out',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                fadeInUp: {
+                  '0%': { opacity: '0', transform: 'translateY(10px)' },
+                  '100%': { opacity: '1', transform: 'translateY(0)' },
+                }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" defer></script>
     
-    <!-- MAIN APPLICATION SCRIPT -->
-    <script type="text/babel" data-type="module">
-        import React, { useState, useEffect } from 'react';
+    <!-- 3. Main App Logic -->
+    <script type="text/babel" data-type="module" defer>
+        import React, { useState, useEffect, useMemo } from 'react';
         import { createRoot } from 'react-dom/client';
         import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
         import { 
@@ -969,7 +965,7 @@
             ];
 
             return (
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12 asset-grid-container">
                      {assets.map(asset => (
                         <motion.button 
                             key={asset.id}
@@ -1266,8 +1262,17 @@
           );
         };
 
-        const root = createRoot(document.getElementById('root'));
-        root.render(<App />);
+        // Initialize with requestIdleCallback to avoid blocking the main thread during initial paint
+        const init = () => {
+             const root = createRoot(document.getElementById('root'));
+             root.render(<App />);
+        };
+
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(init);
+        } else {
+            setTimeout(init, 100);
+        }
     </script>
 </body>
 </html>
