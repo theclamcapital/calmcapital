@@ -54,6 +54,12 @@
         content-visibility: auto;
         contain-intrinsic-size: 1px 500px;
       }
+      
+      /* Optimization for Accordion Content */
+      .accordion-content {
+          content-visibility: auto;
+          contain: content;
+      }
 
       /* Skeleton Loader Styles */
       .sk-container { display: flex; min-height: 100vh; background: transparent; }
@@ -233,20 +239,61 @@
     title: 'Structural Asset Classes',
     subtitle: 'The Building Blocks of a Portfolio',
     icon: 'BookOpen',
-    readTime: "35 min read",
+    readTime: "55 min read",
     content: {
       openingContext: "For the institutional investor, the question 'Which stock should I buy?' is secondary. The primary question is 'How should I allocate capital across different asset classes?' This decision—Asset Allocation—explains over 90% of the variance in portfolio returns over time, according to the seminal Brinson, Hood, and Beebower study. \n\nAn asset class is a collection of securities that exhibit similar financial characteristics and behave similarly in the marketplace. The true power of a portfolio comes not from the performance of any single asset, but from the interaction between assets that move independently (Correlation). The goal of The Calm Capital is to construct a system where the whole is more robust than the sum of its parts. This module deconstructs the six fundamental asset classes available to the Indian investor, stripping away marketing narratives to reveal their structural roles, inherent risks, and long-term utility.",
       visualType: 'assetClassExpandable',
       chapters: [
          { 
              heading: "I. Public Equity: The Engine of Wealth", 
-             body: `**Definition:** Public Equity represents fractional ownership in a business listed on a stock exchange (NSE/BSE). It is a claim on the future earnings and assets of a corporation.
+             body: `**Definition:** Public Equity represents fractional ownership in a business listed on a stock exchange (such as the NSE or BSE). It is a claim on the future earnings and residual assets of a corporation. Unlike debt, where the return is fixed, equity offers a share in the infinite upside of human ingenuity and economic expansion.
+
+             **The Structural Hierarchy (The Capital Stack):**
+             To understand equity, one must understand its position in the Capital Stack. In the event of a corporate bankruptcy, the order of payout is:
+             1. Tax Authorities (Government)
+             2. Secured Lenders (Banks)
+             3. Unsecured Lenders (Bondholders)
+             4. Employees
+             5. Shareholders (Equity Owners)
              
-             **Structural Role:** In a portfolio, Equity serves a single, critical purpose: **Real Growth**. It is the only major asset class that has historically produced returns significantly above inflation (5-6% Real Return) over multi-decade periods. Without Equity, a portfolio cannot maintain its purchasing power against the ravages of lifestyle inflation.
+             Equity holders are the **Residual Claimants**. They get paid last. If the company fails, they get zero. This structural subordination is the source of "Equity Risk." However, because they bear the highest risk, they also command the **Equity Risk Premium**—the excess return over risk-free bonds. Historically, in India, this premium has been 5-6% over the risk-free rate, resulting in nominal compounding of 12-14%.
              
-             **The Volatility Premium:** The high returns of equity are not a 'gift' from the market; they are compensation for enduring volatility. The stock market is not a linear compounding machine; it is a manic-depressive mechanism. In the short run (1-3 years), prices are driven by liquidity, sentiment, and geopolitical noise. In the long run (10+ years), prices converge with earnings growth. The investor who cannot endure a 30% drawdown will never capture the 15% compounding.
+             **Taxonomy of Capitalization:**
+             Not all equity is created equal. The behavior of a stock is heavily influenced by its "Market Capitalization" (Share Price × Number of Shares).
              
-             **Indian Context:** For Indian investors, the Nifty 50 and Nifty Next 50 indices provide a diversified, low-cost mechanism to participate in the growth of the formal economy. Active fund management is increasingly failing to beat these simple benchmarks due to high expense ratios and the efficiency of modern markets.` 
+             1. **Large Cap (Top 100 Companies): The Super-Tankers**
+             These are the blue-chip behemoths (e.g., Reliance, TCS, HDFC Bank). They typically have dominant market shares, robust balance sheets, and steady cash flows. They are proxies for the nominal GDP of India.
+             *Role:* Stability and steady compounding. They fall less during crashes (lower beta) but may double slower during booms.
+             *Risk:* Disruption risk. Large companies often struggle to innovate as fast as smaller challengers.
+             
+             2. **Mid Cap (Rank 101-250): The Speedboats**
+             These are companies in their high-growth phase. They have survived the "startup death valley" and are scaling operations. They are the bridge between emergence and dominance.
+             *Role:* Alpha generation. This segment often produces the "multi-baggers" of the next decade.
+             *Risk:* Higher volatility. A bad quarter can punish the stock price by 20%.
+             
+             3. **Small Cap (Rank 251+): The Discovery Zone**
+             These are smaller, often niche companies. This segment is the "Wild West" of the market.
+             *Role:* Non-linear returns.
+             *Risk:* **Mortality Risk**. A significant percentage of small caps go to zero or become "zombies" (companies that exist but never grow). They also suffer from **Liquidity Risk**—in a market crash, buyers disappear, and you may not be able to sell your shares without crashing the price further. Institutional investors often limit exposure here.
+             
+             **Valuation Mechanics: The Language of Price**
+             A stock price tells you nothing about value. To judge value, one must look at the **Price-to-Earnings (P/E) Ratio**.
+             *Definition:* The P/E ratio represents the number of years it takes for the company to earn back your investment at current profit levels. A P/E of 20 means you are paying ₹20 for ₹1 of earnings.
+             *Context:* A high P/E (e.g., 80) implies the market expects massive future growth. A low P/E (e.g., 8) implies the market expects earnings to stagnate or decline.
+             *The Trap:* Buying a "cheap" stock (Low P/E) that is structurally declining is a **Value Trap**. Buying an "expensive" stock (High P/E) where growth fails to materialize is a **Growth Trap** (De-rating).
+             
+             **The Dividend Component:**
+             Dividends are cash payouts to shareholders. In a sideways or bear market, dividends can constitute a significant portion (sometimes >50%) of total return. High dividend yields usually come from mature, cash-rich companies (e.g., ITC, Power Grid). Reinvesting dividends is the turbo-charger of compounding.
+             
+             **Impact of Economic Cycles:**
+             Equity sectors rotate in leadership depending on the economic cycle.
+             *Early Cycle (Recovery):* Financials and Consumer Discretionary lead as credit expands and optimism returns.
+             *Mid Cycle (Expansion):* Industrials and Technology often outperform as capex and productivity rise.
+             *Late Cycle (Inflation):* Commodities, Energy, and Metals often shine as physical prices rise.
+             *Recession:* FMCG, Pharma, and Utilities (Defensives) outperform because people still need toothpaste and medicine regardless of the economy.
+             
+             **The Indian Context:**
+             The Nifty 50 has evolved significantly. In 2005, it was heavy on Commodities and Old Economy. Today, it is dominated by Financial Services (~35%) and Technology (~15%). This shift reflects the formalization and digitization of the Indian economy. Investing in the index is investing in the modernization of India.` 
          },
          { 
              heading: "II. Fixed Income (Debt): The Stabilizing Anchor", 
@@ -307,36 +354,92 @@
   {
     id: 'compounding',
     title: 'The Mechanics of Compounding',
-    subtitle: 'Exponential Growth and Continuity',
+    subtitle: 'Exponential Growth, Variance Drain, and Continuity',
     icon: 'Landmark',
-    readTime: "12 min read",
+    readTime: "45 min read",
     content: {
-      openingContext: "Compounding is often reduced to the simple platitude of 'money making money.' However, structurally, it is the mathematical manifestation of continuity. It is an exponential function where the primary variable is not the rate of return, but the duration of the holding period. For the Indian investor, accustomed to linear thinking, grasping the non-intuitive nature of exponential growth is the key to generational wealth.",
+      openingContext: "Compounding is often reduced to the simple platitude of 'money making money' or the 'eighth wonder of the world.' However, structurally, it is the mathematical manifestation of continuity. It is an exponential function where the primary variable is not the rate of return (r), but the duration of the holding period (n) and the stability of the variance (v). For the Indian investor, accustomed to linear thinking and frequent interruptions (market timing), grasping the non-intuitive nature of exponential growth is the single most critical factor in generating generational wealth. This module dissects the physics of compounding, revealing why maximizing returns often destroys wealth, and why 'boring' continuity is the most aggressive strategy of all.",
       visualType: 'compounding',
       chapters: [
         { 
-            heading: "I. Geometry of Wealth", 
-            body: `The fundamental equation of compounding, **A = P(1 + r)^n**, reveals a non-intuitive truth: wealth accumulation is exponentially sensitive to *n* (time). Doubling the return (r) doubles the outcome, but doubling the time (n) can increase the outcome by factors of ten or twenty.
+            heading: "I. The Tyranny of the Exponent (Linear vs. Exponential)", 
+            body: `The human brain is biologically wired for linear extrapolation. If you take 30 linear steps (1, 2, 3...), you end up at 30 meters. If you take 30 exponential steps (1, 2, 4, 8...), you end up at a billion meters (26 times around the Earth). This "Exponential Blindness" causes investors to severely underestimate the back-ended nature of wealth creation.
+
+            In a compounding series, the vast majority of the accumulation occurs in the final years. Warren Buffett accumulated 99.7% of his wealth after his 52nd birthday. This was not because he became a better investor in his old age; it was because the base had grown large enough for the exponent to work its physics.
             
-            The 'boring' middle years, where gains seem negligible compared to savings, are the structural foundation required for the exponential explosion in later decades. Warren Buffett accumulated 99% of his wealth after his 50th birthday. This is the power of the exponent. The hardest part of compounding is the first decade, where the results are invisible.` 
+            **The Trap of Early Judgment:** In the first 10 years of a 30-year compounding journey, the results are often invisible. You save, you sacrifice, and the portfolio barely seems to move. This is the "Valley of Disappointment." Most investors quit here, interrupting the process just before the curve goes vertical. Understanding that compounding is boring, then boring, then boring, and then suddenly life-changing, is a prerequisite for endurance.` 
         },
         { 
-            heading: "II. Variance Drain and Asymmetry", 
-            body: `Compounding is structurally fragile. It is destroyed more easily by large losses than it is helped by large gains. This is because a 50% loss requires a 100% gain just to break even.
+            heading: "II. The Variable of Time (N > R)", 
+            body: `The standard wealth formula is: **FV = PV * (1 + r)^n**.
             
-            A portfolio that generates a steady 12% return will vastly outperform a portfolio that oscillates violently between +50% and -40%, even if their average arithmetic returns look similar. This is why "Risk Management" is actually "Compounding Protection." Minimizing large drawdowns is mathematically more important than maximizing upside.` 
+            Mathematically, *n* (Time) is the exponent, while *r* (Rate of Return) is merely the base. This implies that a small increase in Time has a vastly superior effect on final wealth than a large increase in Return.
+            
+            **The Buffett Counterfactual:** If Warren Buffett had started investing at age 30 (instead of 11) and retired at age 60 (instead of continuing to 90), but achieved the *exact same* annual returns (22%), his net worth would not be $100 Billion. It would be approximately $11.9 Million. That is a 99.9% reduction in wealth.
+            
+            The lesson: You cannot control returns (the market controls *r*). You can control duration (you control *n*). The Indian investor often chases higher *r* (via risky F&O or small caps) at the expense of *n* (blowing up the portfolio and restarting). This is a mathematical suicide.` 
         },
         {
-            heading: "III. The Cost of Interruption",
-            body: `The greatest enemy of compounding is interruption. In the Indian context, this often manifests as stopping SIPs (Systematic Investment Plans) during a market correction. When you stop investing during a downturn, you are not protecting capital; you are eliminating the opportunity to lower your average cost of acquisition.
-
-            Uninterrupted compounding requires a portfolio that is robust enough to let you sleep at night so that you are never forced to sell at the bottom. Volatility is the price you pay for performance; panic is the penalty you pay for ignorance.`
+            heading: "III. Variance Drain (The Volatility Tax)",
+            body: `This is the most misunderstood concept in finance. Average Returns are not Realized Returns.
+            
+            Consider two portfolios:
+            - **Portfolio A:** +10%, +10%, +10%, +10%. (Arithmetic Average: 10%, Realized Return: 10%).
+            - **Portfolio B:** +50%, -40%, +50%, -40%. (Arithmetic Average: 5%, Realized Return: -10%).
+            
+            Wait. Portfolio B has an average return of +5% [(50-40)/2], but you lose money? Yes. This is called **Variance Drain**. Volatility eats compounding. The more volatile your returns, the lower your realized wealth compared to the average.
+            
+            **The Asymmetry of Loss:** A 50% loss requires a 100% gain just to get back to even. A 90% loss requires a 900% gain. Avoiding large drawdowns (downside protection) is mathematically more important than capturing maximum upside. A "boring" balanced portfolio that compounds at a steady 12% will vastly outperform a volatile portfolio that averages 15% but suffers 40% drawdowns.`
+        },
+        {
+            heading: "IV. The Cost of Interruption (The SIP Stop)",
+            body: `In the Indian context, interruption usually manifests as stopping a Systematic Investment Plan (SIP) during a market correction. When the market falls 20%, the emotional brain screams "Safety!" and the investor pauses the SIP.
+            
+            This is catastrophic. SIPs are mathematically designed to exploit volatility via Rupee Cost Averaging (buying more units when prices are low). By stopping the SIP during a dip, you are voluntarily removing the "Accelerator" from the engine.
+            
+            **The Penalty of Restarting:** When you interrupt compounding, you don't just pause the graph; you often reset the exponent. If you panic-sell and stay in cash for 2 years, you haven't lost 2 years. You have likely lost the *last* 2 years of your projection (the years where the millions turn into billions). The cost of a 1-year interruption in your 30s is millions of rupees in your 60s.`
+        },
+        {
+            heading: "V. Friction Coefficients (Fees & Expense Ratios)",
+            body: `Fees are negative compounding. They work exactly like inflation, eroding wealth silently and exponentially.
+            
+            Consider a ₹1 Crore portfolio compounding at 12% for 30 years.
+            - **Option A (Direct Plan, 0.1% Expense):** Final Value ≈ ₹29.8 Crores.
+            - **Option B (Regular Plan, 1.1% Expense):** Final Value ≈ ₹22.4 Crores.
+            
+            The difference of 1% in fees cost you **₹7.4 Crores**. You paid the distributor ₹7.4 Crores for "advice" that likely consisted of "stay invested."
+            
+            In a low-return world (post-inflation), fees consume a massive percentage of real return. If your real return is 4% and your fee is 1%, you are giving away 25% of your wealth creation engine every year. Minimizing costs is the only deterministic way to increase returns.`
+        },
+        {
+            heading: "VI. The Psychology of Continuity (Doing Nothing)",
+            body: `Blaise Pascal famously said, "All of humanity's problems stem from man's inability to sit quietly in a room alone." In investing, this inability manifests as "Action Bias."
+            
+            We feel that to earn returns, we must *do* something. We must research, trade, rebalance, and optimize. However, compounding works best when left undisturbed. The "Art of Doing Nothing" is the hardest skill to master.
+            
+            A study by Fidelity found that the best-performing accounts belonged to investors who were either dead or had forgotten their passwords. They had zero "Action Bias." They did not interrupt the exponent. The goal of the Calm Capital framework is to build a portfolio robust enough that you can afford to be inactive. If you have to check it daily, it's not an investment; it's an anxiety disorder.`
+        },
+        {
+            heading: "VII. The Rule of 72 & Doubling Times",
+            body: `To intuitively grasp compounding, use the Rule of 72. Divide 72 by your expected rate of return to see how many years it takes to double your money.
+            
+            - **Fixed Deposit (7%):** Doubles in ~10.2 years.
+            - **Equity Index (12%):** Doubles in ~6 years.
+            - **High Risk (15%):** Doubles in ~4.8 years (but with high variance drain).
+            
+            The magic happens in the "Doubles."
+            1 Crore -> 2 Crores (6 years)
+            2 Crores -> 4 Crores (6 years)
+            4 Crores -> 8 Crores (6 years)
+            8 Crores -> 16 Crores (6 years)
+            
+            In a 24-year period, your money doubles 4 times. But notice: the last double added ₹8 Crores, while the first double added only ₹1 Crore. The time effort was the same (6 years). This is why the first 10-15 years feel futile. You are working for the first double. You must survive long enough to get the fourth double.`
         }
       ],
-      behavioralDimension: "Impatience is the behavioral manifestation of our linear bias. We seek immediate feedback and consistent upward progress. Compounding offers neither in the short term.",
+      behavioralDimension: "Impatience is the behavioral manifestation of our linear bias. We seek immediate feedback and consistent upward progress. Compounding offers neither in the short term. It offers volatility in the short term and magnitude in the long term.",
       limitations: ["Compounding assumes reinvestment of dividends and interest.", "Real markets have sequence-of-returns risk.", "Taxes and fees compound negatively."],
-      riskStatement: "Compounding magnifies everything. Debt compounds. Fees compound. Inflation compounds. It is a double-edged sword.",
-      source: "Research by Javier Estrada & Morgan Housel."
+      riskStatement: "Compounding magnifies everything. Debt compounds. Fees compound. Inflation compounds. It is a double-edged sword. Leverage reverses the equation, making zero a mathematical certainty over time.",
+      source: "Research by Javier Estrada, Morgan Housel, and Einstein's Theory of Exponents."
     }
   },
   {
@@ -613,7 +716,7 @@
         import { 
           BookOpen, ShieldAlert, Scale, Landmark, ChevronRight, Menu, X, 
           Search, Book, User, Feather, FileText, Lock, Layers, Compass, Gavel, Clock, ArrowUp, Zap, BarChart, Activity, Droplets, Target,
-          Globe, Home, TrendingUp, Coins
+          Globe, Home, TrendingUp, Coins, ChevronDown, ChevronUp
         } from 'lucide-react';
 
         // Retrieve content from global window object
@@ -631,6 +734,61 @@
             User: User,
             Layers: Layers
         };
+
+        // --- NEW: Chapter Accordion Component for Content Performance ---
+        const ChapterAccordion = React.memo(({ chapter, index }) => {
+            const [isOpen, setIsOpen] = useState(false);
+            
+            // Helper to parse Markdown-style bold (**text**)
+            const parseContent = (text) => {
+                const parts = text.split(/(\*\*.*?\*\*)/g);
+                return parts.map((part, i) => {
+                    if (part.startsWith('**') && part.endsWith('**')) {
+                        return <strong key={i} className="text-codex-text font-bold text-lg">{part.slice(2, -2)}</strong>;
+                    }
+                    return part;
+                });
+            };
+
+            return (
+                <div className="border border-codex-gold/20 bg-codex-card mb-4 rounded-sm overflow-hidden transition-all duration-300 hover:border-codex-gold/50">
+                    <button 
+                        onClick={() => setIsOpen(!isOpen)} 
+                        className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none group hover:bg-codex-gold/5 transition-colors"
+                        aria-expanded={isOpen}
+                    >
+                        <div className="flex items-center gap-6">
+                            <span className={`text-xl font-serif ${isOpen ? 'text-codex-gold' : 'text-codex-gold/60'} transition-colors`}>
+                                {(index + 1).toString().padStart(2, '0')}.
+                            </span>
+                            <h3 className={`font-serif text-lg md:text-xl ${isOpen ? 'text-codex-text' : 'text-codex-text/90'} group-hover:text-codex-gold transition-colors`}>
+                                {chapter.heading}
+                            </h3>
+                        </div>
+                        <div className={`text-codex-gold transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
+                             <ChevronDown size={20} className="opacity-70 group-hover:opacity-100"/>
+                        </div>
+                    </button>
+                    <AnimatePresence>
+                        {isOpen && (
+                            <motion.div 
+                                initial={{ height: 0, opacity: 0 }} 
+                                animate={{ height: "auto", opacity: 1 }} 
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                                style={{ willChange: "height" }}
+                            >
+                                <div className="p-6 md:p-8 pt-0 font-body text-lg md:text-xl text-codex-dim leading-loose text-justify border-t border-codex-gold/10 accordion-content">
+                                     {chapter.body.split('\n\n').map((paragraph, i) => (
+                                        <p key={i} className="mb-6 last:mb-0">{parseContent(paragraph.trim())}</p>
+                                      ))}
+                                </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </div>
+            )
+        });
 
         // --- VISUALIZATION COMPONENTS ---
 
@@ -1230,21 +1388,9 @@
                       </figure>
                     )}
 
-                    <div className="my-16 space-y-20">
+                    <div className="my-16">
                        {activeModule.content.chapters.map((chapter, idx) => (
-                         <section key={idx} className="relative chapter-section">
-                            <div className="h-px w-full bg-gradient-to-r from-transparent via-codex-gold to-transparent opacity-40 mb-12"></div>
-                            <h3 className="font-sans text-lg font-bold uppercase tracking-widest text-codex-text mb-8 flex items-center gap-4">
-                              <span className="w-8 h-8 rounded-full border border-codex-gold flex items-center justify-center text-xs text-codex-gold">{idx + 1}</span>
-                              {chapter.heading}
-                            </h3>
-                            <div className="font-body text-lg md:text-xl text-codex-dim leading-loose space-y-6 text-justify">
-                              {/* Newline handling for raw text data */}
-                              {chapter.body.split('\n\n').map((paragraph, i) => (
-                                <p key={i}>{paragraph.trim()}</p>
-                              ))}
-                            </div>
-                         </section>
+                           <ChapterAccordion key={idx} chapter={chapter} index={idx} />
                        ))}
                     </div>
 
